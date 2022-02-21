@@ -1,0 +1,12 @@
+## Problemas do Vagrant 
+Para resolver problema do vagrant no wsl para acessar o Virgual Box
+font: https://www.vagrantup.com/docs/other/wsl
+
+export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
+
+#sobe a maquina do vagrant recarregando o provisionamento
+vagrant reload --provision
+
+#Confirma o acesso as maquinas:
+ansible -m ping all
