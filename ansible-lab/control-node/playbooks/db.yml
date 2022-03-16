@@ -1,0 +1,23 @@
+---
+- name: Setup Databaseserver
+  hosts: db01
+
+  user: vagrant
+  become: yes
+  vars_files: 
+    - vars/main.yml
+  vars:
+    - dbname: "db01"
+    - dbusername: "root"
+    - dbpassword: "devopsdb"
+  tasks:
+    - name: Setup lab ansible hosts
+      lineinfile: line "{{item}}" path=/etc/hosts
+      with_items:
+        - 192.168.1.2 control-node
+        - 192.168.1.3 app01
+        - 192.168.1.4 db01
+    roles:
+      - setup-default-so
+      - role: geerlingguy.mysql
+    

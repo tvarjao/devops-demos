@@ -10,3 +10,13 @@ vagrant reload --provision
 
 #Confirma o acesso as maquinas:
 ansible -m ping all
+
+#Ansible: Playbook (arquivo de configuração yaml)
+
+#comando exetando playbook
+ansible-playbook 'nome-do-arquivo'
+#Verificando consistencia
+ansible-playbook 'nome-do-arquivo' --check
+
+#Instalar galaxy do mysql
+ansible-galaxy install geerlingguy.mysql
