@@ -12,7 +12,10 @@
     - dbpassword: "devopsdb"
   tasks:
     - name: Setup lab ansible hosts
-      lineinfile: line "{{item}}" path=/etc/hosts
+      lineinfile: 
+        dest: /etc/hosts
+        state: present
+        line: "{{item}}"
       with_items:
         - 192.168.1.2 control-node
         - 192.168.1.3 app01

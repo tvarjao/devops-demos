@@ -4,7 +4,7 @@ mysql_database:
     encoding: latin1
     collation: latin1_general_1c1
 mysql_users:
-  - name: noteapp
+  - name: notesapp
     hosts: "%"
     password: devopsdb
     priv: "notes.*:ALL"

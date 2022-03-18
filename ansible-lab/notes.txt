@@ -15,8 +15,11 @@ ansible -m ping all
 
 #comando exetando playbook
 ansible-playbook 'nome-do-arquivo'
-#Verificando consistencia
+#Verificando consistencia - Sem realizar a instalação
 ansible-playbook 'nome-do-arquivo' --check
 
 #Instalar galaxy do mysql
 ansible-galaxy install geerlingguy.mysql
+
+#Para Executar o playbook e configurar o 
+ansible-playbook db.yml
